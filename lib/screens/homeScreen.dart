@@ -1,5 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:wallet/const.dart';
+import 'package:wallet/screens/transactionsScreen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -63,7 +65,14 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => TransactionsScreen(),
+                    ),
+                  );
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: const [
@@ -144,8 +153,8 @@ class HomeScreen extends StatelessWidget {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color.fromRGBO(0, 23, 31, 1),
-            Color.fromRGBO(0, 52, 89, 1),
+            primaryColor,
+            secondaryColor,
           ],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
